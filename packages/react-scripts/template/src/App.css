@@ -1,6 +1,6 @@
-.App {
+/*.App {
   text-align: center;
-}
+}*/
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -8,7 +8,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: rgb(187, 17, 17);
   height: 150px;
   padding: 20px;
   color: white;
@@ -17,8 +17,19 @@
 .App-intro {
   font-size: large;
 }
-
+.playerCard{
+  font-size:30px;
+}
+.playerList{
+  max-height:700px;
+  overflow-y: scroll;
+  width:20%;
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+body{
+  background-color: rgb(238, 242, 243); background-image: linear-gradient(to left, rgb(142, 158, 171), rgb(238, 242, 243));
 }
