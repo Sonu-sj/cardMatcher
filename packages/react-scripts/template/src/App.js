@@ -16,7 +16,7 @@ constructor(props){
   render() {
     return (
       <div className="App">
-      <PlayerList data={this.state.players} Highlight={'true'}/> 
+      <PlayerList data={this.state.players}/> 
       <TeamList data={this.state.selectedPlayers}/>     
       </div>
     );
