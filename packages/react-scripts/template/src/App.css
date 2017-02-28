@@ -34,8 +34,8 @@
 .teamList{
   flex:2;
   display: flex;
-  max-height: 150px;
-  margin-top:20%;
+  /*max-height: 150px;*/
+  margin-top:10%;
   flex-wrap:wrap
 }
 
