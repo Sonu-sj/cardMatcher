@@ -6,18 +6,25 @@ import TeamList from './TeamList.js';
 import data from './source.js';
 
 class App extends Component {
-constructor(props){
-  super(props)
-  this.state={
-    players:data.results,
-    selectedPlayers:Array.from({length: 12})
+  constructor(props) {
+    super(props)
+    this.state = {
+      players: data.results,
+      selectedPlayers: Array.from({ length: 12 })
+    }
   }
-}
+
+  movePlayer = (sourceIndex, destIndex) => {
+    this.state.selectedPlayers.shift(this.state.players[sourceIndex]);
+    this.setState({
+      selectedPlayers: this.state.selectedPlayers
+    })
+  }
   render() {
     return (
       <div className="App">
-      <PlayerList data={this.state.players}/> 
-      <TeamList data={this.state.selectedPlayers}/>     
+        <PlayerList data={this.state.players} movePlayer={this.movePlayer} />
+        <TeamList data={this.state.selectedPlayers} />
       </div>
     );
   }
