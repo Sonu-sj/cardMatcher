@@ -4,7 +4,7 @@ class TeamList extends Component {
     render() {
         return (
             <div className="teamList">
-                {this.props.data.map((player,i) =><TeamCard key={i} {...player} />)
+                {this.props.data.map((player,i) =><TeamCard key={i} {...player} movePlayer={this.props.movePlayer} index={i}/>)
                 }
             </div>
         );

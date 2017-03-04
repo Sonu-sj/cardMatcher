@@ -10,6 +10,7 @@ class PlayerList extends Component {
       this.setState({
         HighlightIndex: index
       })
+      this.props.setSelection(index)
     }
   }
 

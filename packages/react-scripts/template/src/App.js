@@ -12,19 +12,26 @@ class App extends Component {
       players: data.results,
       selectedPlayers: Array.from({ length: 12 })
     }
+    this.selectedIndex = -1;
   }
 
-  movePlayer = (sourceIndex, destIndex) => {
-    this.state.selectedPlayers.shift(this.state.players[sourceIndex]);
+  movePlayer = (destIndex) => {
+    // this.state.selectedPlayers.shift(this.state.players[sourceIndex]);
+    var selectedPlayer = this.state.players[this.selectedIndex];
+    this.state.selectedPlayers.splice(destIndex,1,selectedPlayer);
     this.setState({
       selectedPlayers: this.state.selectedPlayers
     })
   }
+
+  setSelection = (index) =>{
+    this.selectedIndex = index;
+  }
   render() {
     return (
       <div className="App">
-        <PlayerList data={this.state.players} movePlayer={this.movePlayer} />
-        <TeamList data={this.state.selectedPlayers} />
+        <PlayerList data={this.state.players}  setSelection = {this.setSelection}/>
+        <TeamList data={this.state.selectedPlayers} movePlayer={this.movePlayer} />
       </div>
     );
   }
